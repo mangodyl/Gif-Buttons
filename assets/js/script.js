@@ -47,7 +47,7 @@ $(document).ready(function () {
     });
 
     // Run API request and dynamically add gifs (response) onto page, clearing previous gifs
-    $(".btn-danger").on("click", function () {
+    $(document).on("click", ".btn-danger", function () {
 
         var buttonName = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Ik7JfpAz1pvVh6HxF0jhG0Lxyv80iodR&q=" + buttonName+ "&limit=10&lang=en"
@@ -65,6 +65,7 @@ $(document).ready(function () {
 
             console.log(results);
 
+            // Create gif with rating for each item in response array
             for (var i = 0; i < results.length; i++) {
 
                 var gifDiv = $("<div>");
