@@ -45,4 +45,29 @@ $(document).ready(function () {
 
     });
 
+
+    $(".btn-danger").on("click", function () {
+
+        var buttonName = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Ik7JfpAz1pvVh6HxF0jhG0Lxyv80iodR&q=" + buttonName+ "&limit=10&lang=en"
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+
+            console.log(response);
+
+            var results = response.data;
+
+            for (var i = 0; i > results.length; i++) {
+
+                
+
+            }
+
+        });
+
+    });
+
 });
