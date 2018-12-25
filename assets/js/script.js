@@ -33,4 +33,16 @@ $(document).ready(function () {
 
     makeButtons();
 
+    $("#submit-button").on("click", function () {
+
+        $("#buttons-div").html(" ");
+
+        buttonArray.push($("#inputForm").val());
+
+        makeButtons();
+
+        $("#inputForm").val("")
+
+    });
+
 });
