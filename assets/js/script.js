@@ -41,7 +41,7 @@ $(document).ready(function () {
 
         makeButtons();
 
-        $("#inputForm").val("")
+        $("#inputForm").val("");
 
     });
 
@@ -50,6 +50,8 @@ $(document).ready(function () {
 
         var buttonName = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Ik7JfpAz1pvVh6HxF0jhG0Lxyv80iodR&q=" + buttonName+ "&limit=10&lang=en"
+
+        $("#gif-div").html("");
 
         $.ajax({
             url: queryURL,
@@ -60,11 +62,26 @@ $(document).ready(function () {
 
             var results = response.data;
 
-            for (var i = 0; i > results.length; i++) {
+            console.log(results);
 
-                
+            for (var i = 0; i < results.length; i++) {
 
-            }
+                var gifDiv = $("<div>");
+                var rating = results[i].rating;
+
+                var p = $("<p>").text("Rating: " + rating);
+
+                var gif = $("<img>");
+                gif.attr("src", results[i].images.fixed_height.url);
+
+                gifDiv.prepend(p);
+                gifDiv.append(gif);
+
+                console.log(gifDiv);
+
+                $("#gif-div").prepend(gifDiv);
+
+            };
 
         });
 
