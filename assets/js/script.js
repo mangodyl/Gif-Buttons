@@ -33,6 +33,7 @@ $(document).ready(function () {
 
     makeButtons();
 
+    // Add user submission into array and recreate dynamic buttons from array
     $("#submit-button").on("click", function () {
 
         $("#buttons-div").html(" ");
@@ -45,7 +46,7 @@ $(document).ready(function () {
 
     });
 
-
+    // Run API request and dynamically add gifs (response) onto page, clearing previous gifs
     $(".btn-danger").on("click", function () {
 
         var buttonName = $(this).attr("data-name");
