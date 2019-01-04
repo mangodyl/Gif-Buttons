@@ -74,7 +74,7 @@ $(document).ready(function () {
                 var p = $("<p>").text("Rating: " + rating);
 
                 var gif = $("<img>");
-                gif.attr("src", results[i].images.fixed_height.url);
+                gif.attr("src", results[i].images.fixed_height_still.url);
 
                 gifDiv.prepend(p);
                 gifDiv.append(gif);
