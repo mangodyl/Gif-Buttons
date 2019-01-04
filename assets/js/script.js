@@ -13,6 +13,8 @@ var buttonArray = [
     "the elder scrolls"
 ]
 
+var animated = false;
+
 $(document).ready(function () {
 
     // Function to make buttons dynamically
@@ -71,10 +73,11 @@ $(document).ready(function () {
                 var gifDiv = $("<div>");
                 var rating = results[i].rating;
 
-                var p = $("<p>").text("Rating: " + rating);
+                var p = $("<p>").text("Rating: " + rating.toUpperCase());
 
                 var gif = $("<img>");
                 gif.attr("src", results[i].images.fixed_height_still.url);
+                gif.attr("data-number", i);
 
                 gifDiv.prepend(p);
                 gifDiv.append(gif);
@@ -84,6 +87,22 @@ $(document).ready(function () {
                 $("#gif-div").prepend(gifDiv);
 
             };
+
+            $("img").click(function () {
+
+                var a = $(this).attr("data-number");
+
+                if (animated === false) {
+                    $(this).attr("src", results[a].images.fixed_height.url);
+                    animated = true;
+                }
+
+                else if (animated === true) {
+                    $(this).attr("src", results[a].images.fixed_height_still.url);
+                    animated = false;
+                }
+
+            });
 
         });
 
