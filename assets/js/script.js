@@ -74,7 +74,7 @@ $(document).ready(function () {
                 var rating = results[i].rating;
 
                 var p = $("<p>").text("Rating: " + rating.toUpperCase());
-
+                
                 var gif = $("<img>");
                 gif.attr("src", results[i].images.fixed_height_still.url);
                 gif.attr("data-number", i);
