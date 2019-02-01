@@ -1,7 +1,7 @@
 # Gif-Buttons
 Dynamic gif buttons using the GIPHY API
 
-https://mangodyl.github.io/TriviaGame/
+https://mangodyl.github.io/Gif-Buttons/
 
 Things to add:
   - option to load more results
